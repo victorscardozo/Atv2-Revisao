@@ -40,7 +40,7 @@ Atv2-Revisao/
 
 
 
-## ⚙️ Requisitos
+## ⚙️ **Requisitos**
 
 Python 3.10+
 
