@@ -1,0 +1,13 @@
+{
+  "_seq": 101,
+  "itens": {
+    "pd-0101": {
+      "pedido_id": "pd-0101",
+      "cliente_id": "c-001",
+      "produto_id": "p-001",
+      "status": "ENVIADO",
+      "galpao_destino": "g-001",
+      "rota": "R-ECONOMICA-G-001"
+    }
+  }
+}
