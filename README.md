@@ -37,3 +37,80 @@ Atv2-Revisao/
 │  └─ simular.py        ← Simula todo o fluxo logístico
 │
 └─ README.md            ← Este arquivo
+
+
+
+⚙️ Requisitos
+
+Python 3.10+
+
+Nenhuma biblioteca externa é necessária.
+
+(Opcional — para saída colorida no terminal)
+pip install rich
+
+🚀 Como Executar
+1️⃣ Clonar ou baixar o projeto
+git clone https://github.com/SEU-USUARIO/Atv2-Revisao.git
+cd Atv2-Revisao
+
+2️⃣ Executar a simulação completa
+
+No terminal do VS Code ou PowerShell:
+
+py -3 -m scripts.simular
+
+
+💡 Dica: Sempre execute a partir da raiz do projeto (onde está a pasta data).
+
+🔁 Fluxo do Sistema
+Cliente → Pedido → Cálculo de Rota → Atualização de Status → Conclusão
+
+Etapas simuladas
+
+Receber Pedido
+Cria um pedido com cliente e produto.
+
+Processar Rota
+Calcula qual galpão está mais próximo usando distância euclidiana.
+
+Atualizar Status
+Define o status final (ENVIADO) e exibe os resultados.
+
+🧮 Exemplo de Execução
+py -3 -m scripts.simular
+
+Saída esperada
+🚚 INICIANDO SIMULAÇÃO LOGÍSTICA...
+------------------------------------------------------------
+📦 Pedido recebido com sucesso!
+   → ID: pd-0101
+   → Status: CONFIRMADO
+
+🧭 Rota definida:
+   → Galpão: g-001
+   → Tipo de Rota: R-ECONOMICA-G-001
+
+📤 Pedido atualizado!
+   → ID: pd-0101
+   → Novo Status: ENVIADO
+------------------------------------------------------------
+✅ Fluxo finalizado com sucesso!
+
+📊 ESTADO FINAL DOS DADOS:
+╔══════════════════════╗
+║ Pedidos              ║
+╚══════════════════════╝
+{
+  "_seq": 101,
+  "itens": {
+    "pd-0101": {
+      "pedido_id": "pd-0101",
+      "cliente_id": "c-001",
+      "produto_id": "p-001",
+      "status": "ENVIADO",
+      "galpao_destino": "g-001",
+      "rota": "R-ECONOMICA-G-001"
+    }
+  }
+}
