@@ -39,122 +39,12 @@ Atv2-Revisao/
 └─ README.md            ← Este arquivo
 
 
-
 ## ⚙️ **Requisitos**
 
-Python 3.10+
+- Python **3.10+**
+- Nenhuma biblioteca externa é necessária.
 
-Nenhuma biblioteca externa é necessária.
+### *(Opcional — para saída colorida no terminal)*
 
-(Opcional — para saída colorida no terminal)
+```bash
 pip install rich
-
-🚀 Como Executar
-1️⃣ Clonar ou baixar o projeto
-git clone https://github.com/SEU-USUARIO/Atv2-Revisao.git
-cd Atv2-Revisao
-
-2️⃣ Executar a simulação completa
-
-No terminal do VS Code ou PowerShell:
-
-py -3 -m scripts.simular
-
-
-💡 Dica: Sempre execute a partir da raiz do projeto (onde está a pasta data).
-
-🔁 Fluxo do Sistema
-Cliente → Pedido → Cálculo de Rota → Atualização de Status → Conclusão
-
-Etapas simuladas
-
-Receber Pedido
-Cria um pedido com cliente e produto.
-
-Processar Rota
-Calcula qual galpão está mais próximo usando distância euclidiana.
-
-Atualizar Status
-Define o status final (ENVIADO) e exibe os resultados.
-
-🧮 Exemplo de Execução
-py -3 -m scripts.simular
-
-Saída esperada
-🚚 INICIANDO SIMULAÇÃO LOGÍSTICA...
-------------------------------------------------------------
-📦 Pedido recebido com sucesso!
-   → ID: pd-0101
-   → Status: CONFIRMADO
-
-🧭 Rota definida:
-   → Galpão: g-001
-   → Tipo de Rota: R-ECONOMICA-G-001
-
-📤 Pedido atualizado!
-   → ID: pd-0101
-   → Novo Status: ENVIADO
-------------------------------------------------------------
-✅ Fluxo finalizado com sucesso!
-
-📊 ESTADO FINAL DOS DADOS:
-╔══════════════════════╗
-║ Pedidos              ║
-╚══════════════════════╝
-{
-  "_seq": 101,
-  "itens": {
-    "pd-0101": {
-      "pedido_id": "pd-0101",
-      "cliente_id": "c-001",
-      "produto_id": "p-001",
-      "status": "ENVIADO",
-      "galpao_destino": "g-001",
-      "rota": "R-ECONOMICA-G-001"
-    }
-  }
-}
-
-
-🧠 Lógica de Cálculo de Distância
-
-O cálculo da distância é feito utilizando a distância euclidiana, conforme a fórmula abaixo:
-
-𝑑=√((𝑥1−𝑥2)2+(𝑦1−𝑦2)2)d=√((x1−x2)2+(y1−y2)2)
-
-O galpão com menor distância ao cliente é selecionado para a entrega.
-
-💾 Funcionamento Interno
-
-O sistema é dividido em três camadas principais:
-
-1. lib/
-
-Contém funções utilitárias, como:
-
-jsondb.py: leitura e escrita de arquivos JSON;
-
-distancia.py: cálculo da distância entre pontos.
-
-2. services/
-
-Responsável pela lógica principal:
-
-orders.py: gerencia pedidos, status e filas;
-
-routing.py: define o galpão mais próximo.
-
-3. scripts/
-
-Contém scripts de execução:
-
-simular.py: coordena todo o fluxo de simulação (entrada → rota → status).
-
-📈 Fluxo Simplificado
-📦 Pedido Recebido
-       ↓
-🧭 Cálculo de Rota (galpão mais próximo)
-       ↓
-🚚 Atualização de Status → ENVIADO
-       ↓
-✅ Fim do Processo
