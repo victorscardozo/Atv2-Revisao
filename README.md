@@ -38,10 +38,7 @@ Atv2-Revisao/
 │
 └─ README.md            ← Este arquivo
 
-
-
-
-⚙️ Requisitos
+⚙️Requisitos
 
 Python 3.10+
 
