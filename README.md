@@ -40,7 +40,7 @@ Atv2-Revisao/
 
 
 
-⚙️ Requisitos
+## ⚙️ Requisitos
 
 Python 3.10+
 
@@ -114,3 +114,47 @@ Saída esperada
     }
   }
 }
+
+
+🧠 Lógica de Cálculo de Distância
+
+O cálculo da distância é feito utilizando a distância euclidiana, conforme a fórmula abaixo:
+
+𝑑=√((𝑥1−𝑥2)2+(𝑦1−𝑦2)2)d=√((x1−x2)2+(y1−y2)2)
+
+O galpão com menor distância ao cliente é selecionado para a entrega.
+
+💾 Funcionamento Interno
+
+O sistema é dividido em três camadas principais:
+
+1. lib/
+
+Contém funções utilitárias, como:
+
+jsondb.py: leitura e escrita de arquivos JSON;
+
+distancia.py: cálculo da distância entre pontos.
+
+2. services/
+
+Responsável pela lógica principal:
+
+orders.py: gerencia pedidos, status e filas;
+
+routing.py: define o galpão mais próximo.
+
+3. scripts/
+
+Contém scripts de execução:
+
+simular.py: coordena todo o fluxo de simulação (entrada → rota → status).
+
+📈 Fluxo Simplificado
+📦 Pedido Recebido
+       ↓
+🧭 Cálculo de Rota (galpão mais próximo)
+       ↓
+🚚 Atualização de Status → ENVIADO
+       ↓
+✅ Fim do Processo
